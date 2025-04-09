@@ -1,0 +1,9 @@
+{% extends 'qa/base.html' %}
+{% block content %}
+    <h2>Answer to: {{ question.title }}</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Post Answer</button>
+    </form>
+{% endblock %}
